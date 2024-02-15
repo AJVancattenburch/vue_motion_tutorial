@@ -1,22 +1,19 @@
 <template>
-  <section class="container-fluid">`
-      <div ref="target" v-motion="motionInstance">
-        <div class="target">Target</div>
-      </div>
-  </section>
-
+  <div ref="target" v-motion="springRightCenter">
+    <div class="target">Target</div>
+  </div>
 </template>
 
 <script>
 import { ref } from "vue";
-import { motionInstance } from "../utils/VueMotion.js";
+import { springRightCenter } from "../utils/VueMotion.js";
 
 export default {
   setup() {
-    const target = ref(motionInstance.target);
+    const target = ref(springRightCenter.target);
     return {
       target,
-      motionInstance,
+      springRightCenter,
     }
   }
 }
