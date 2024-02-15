@@ -1,6 +1,9 @@
 <template>
   <div ref="target" v-motion="springRightCenter">
     <div class="target">Target</div>
+    <div class="target">Target</div>
+    <div class="target">Target</div>
+    <div class="target">Target</div>
   </div>
 </template>
 
