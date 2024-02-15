@@ -1,13 +1,22 @@
 <template>
-    <div class="target" v-motion-slide-visible-once-right>1</div>
+  <section class="container-fluid">`
+      <div ref="target" v-motion="motionInstance">
+        <div class="target">Target</div>
+      </div>
+  </section>
+
 </template>
 
 <script>
+import { ref } from "vue";
+import { motionInstance } from "../utils/VueMotion.js";
 
 export default {
   setup() {
+    const target = ref(motionInstance.target);
     return {
-      
+      target,
+      motionInstance,
     }
   }
 }
