@@ -1,3 +1,15 @@
+:root {
+  --bg-color: #0a081b;
+  --shadow-green: #91e774;
+  --shadow-red: #d85571;
+  --shadow-purple: #432f6e;
+  --shadow-blue: #50c4e8;
+  --translucent-green: #91e77440;
+  --translucent-red: #d8557140;
+  --translucent-purple: #432f6e;
+  --translucent-blue: #50c4e840;
+}
+
 .clip-text {
   white-space: nowrap;
   text-overflow: ellipsis;

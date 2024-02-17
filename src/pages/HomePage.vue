@@ -1,37 +1,45 @@
 <template>
-  <div ref="target" v-motion="springRightCenter">
-    <div class="target">Target</div>
-    <div class="target">Target</div>
-    <div class="target">Target</div>
-    <div class="target">Target</div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 card-container">
+        <TranslateCard v-for="(card, index) in translateCards" :key="index" :translateCard="card" :target="target" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { springRightCenter } from "../utils/VueMotion.js";
+import { translateCards } from '../utils/VueMotion.js';
+import TranslateCard from "../components/TranslateCard.vue";
 
 export default {
   setup() {
     const target = ref(springRightCenter.target);
+
+    onMounted(() => {
+      const translateCards = ref(translateCards);
+    });
     return {
       target,
+      translateCards,
       springRightCenter,
     }
+  },
+  components: {
+    TranslateCard,
   }
 }
 </script>
 
 <style scoped lang="scss">
-.target {
-  width: 100px;
-  height: 100px;
-  margin: 300px auto 500px auto;
+.card-container {
+  height: 100%;
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #43b883;
-  border-radius: 10px;
-  font-weight: bold;
 }
 </style>
